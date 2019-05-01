@@ -58,7 +58,7 @@ public class NumberSystems {
             String numberInput = scanner.nextLine();
             for (int i = 0; i < numberInput.length(); i++) {
                 char digit = numberInput.toLowerCase().charAt(i);
-                if ((Character.isDigit(digit) && Character.getNumericValue(digit) < firstSystem) || (array[0][0] <= digit && digit <= array[firstSystem - 11][0])) {
+                if ((Character.isDigit(digit) && (digit - '0') < firstSystem) || (10 < firstSystem && (array[0][0] <= digit && digit <= array[firstSystem - 11][0]))) {
                     number += Character.toString(digit);
                 } else {
                     number = "";
@@ -88,7 +88,7 @@ public class NumberSystems {
                 int digit = 0;
                 char charDigit = number.charAt(i);
                 if (Character.isDigit(charDigit)) {
-                    digit = Integer.parseInt(String.valueOf(charDigit));
+                    digit = number.charAt(i) - '0';
                 } else {
                     for (int j = firstSystem - 11; j >= 0; j--) {
                         if (charDigit == array[j][0]) {
