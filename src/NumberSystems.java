@@ -80,7 +80,7 @@ public class NumberSystems {
     }
 
     public String transformableNumberTo10System(int firstSystem, String number) {
-        if (firstSystem != 10) {
+        if (firstSystem != 10 && !number.equals("0")) {
             BigInteger bigInteger = BigInteger.valueOf(0);
             int array[][] = createsArrayLetterEqualDigit();
             BigInteger bigAddition;
@@ -107,7 +107,7 @@ public class NumberSystems {
     }
 
     public String transformableNumberToRightSystem(String number, int secondSystem) {
-        if (secondSystem != 10) {
+        if (secondSystem != 10 && !number.equals("0")) {
             BigInteger bigInteger = new BigInteger(number);
             BigInteger zero = new BigInteger("0");
             StringBuilder builder = new StringBuilder();
